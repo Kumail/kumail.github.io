@@ -1,259 +1,1026 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KK IT Support | Melbourne IT Help for Home and Small Business</title>
+  <meta
+    name="description"
+    content="KK IT Support provides practical home and small business IT support in Melbourne, including Wi-Fi setup, laptop help, printer and email issues, virus removal, remote support, and website help."
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f4efe7;
+      --surface: rgba(255, 255, 255, 0.76);
+      --surface-strong: #fffaf4;
+      --text: #14213d;
+      --muted: #516079;
+      --line: rgba(20, 33, 61, 0.12);
+      --brand: #ff6b35;
+      --brand-deep: #d94f1f;
+      --accent: #0f766e;
+      --accent-soft: #d9f3ef;
+      --shadow: 0 24px 60px rgba(20, 33, 61, 0.14);
+      --radius-lg: 28px;
+      --radius-md: 20px;
+      --radius-sm: 14px;
+      --max: 1180px;
+    }
 
-  <title>Mohammad Kumail</title>
+    * {
+      box-sizing: border-box;
+    }
 
-  <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    html {
+      scroll-behavior: smooth;
+    }
 
-  <!-- Custom fonts for this template -->
-  <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet">
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    body {
+      margin: 0;
+      font-family: "Manrope", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(255, 107, 53, 0.18), transparent 34%),
+        radial-gradient(circle at top right, rgba(15, 118, 110, 0.14), transparent 28%),
+        linear-gradient(180deg, #fff9f2 0%, var(--bg) 58%, #f7f3ec 100%);
+    }
 
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-  <!-- Custom styles for this template -->
-  <link href="css/resume.css" rel="stylesheet">
+    img {
+      max-width: 100%;
+      display: block;
+    }
 
+    .shell {
+      width: min(var(--max), calc(100% - 2rem));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(18px);
+      background: rgba(255, 249, 242, 0.74);
+      border-bottom: 1px solid rgba(20, 33, 61, 0.08);
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      min-height: 76px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.85rem;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .brand-mark {
+      width: 2.6rem;
+      height: 2.6rem;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      color: white;
+      background: linear-gradient(135deg, var(--brand), #ff9868);
+      box-shadow: 0 12px 26px rgba(255, 107, 53, 0.35);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      color: var(--muted);
+      font-size: 0.97rem;
+    }
+
+    .nav a:hover,
+    .nav a:focus-visible {
+      color: var(--text);
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      border-radius: 999px;
+      padding: 0.9rem 1.3rem;
+      font-weight: 800;
+      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+    }
+
+    .button:hover,
+    .button:focus-visible {
+      transform: translateY(-1px);
+    }
+
+    .button-primary {
+      color: white;
+      background: linear-gradient(135deg, var(--brand), #ff8b5d);
+      box-shadow: 0 18px 34px rgba(255, 107, 53, 0.28);
+    }
+
+    .button-secondary {
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.62);
+    }
+
+    .hero {
+      padding: 4.5rem 0 3rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 2rem;
+      align-items: stretch;
+    }
+
+    .hero-copy,
+    .hero-card,
+    .section-card,
+    .service-card,
+    .support-card,
+    .process-card,
+    .faq-card,
+    .contact-card {
+      background: var(--surface);
+      border: 1px solid rgba(255, 255, 255, 0.42);
+      backdrop-filter: blur(14px);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-copy {
+      padding: 3rem;
+      border-radius: var(--radius-lg);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-copy::after {
+      content: "";
+      position: absolute;
+      inset: auto -3rem -3rem auto;
+      width: 12rem;
+      height: 12rem;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(15, 118, 110, 0.18), transparent 70%);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      border-radius: 999px;
+      padding: 0.5rem 0.9rem;
+      color: var(--accent);
+      background: var(--accent-soft);
+      font-weight: 800;
+      font-size: 0.86rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      font-family: "Space Grotesk", sans-serif;
+      line-height: 0.98;
+      letter-spacing: -0.03em;
+    }
+
+    h1 {
+      margin-top: 1.15rem;
+      font-size: clamp(3rem, 7vw, 5.6rem);
+      max-width: 10ch;
+    }
+
+    .hero-copy p {
+      margin: 1.3rem 0 0;
+      max-width: 60ch;
+      color: var(--muted);
+      font-size: 1.08rem;
+      line-height: 1.75;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      margin-top: 2rem;
+    }
+
+    .hero-points {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.9rem;
+      margin-top: 2rem;
+    }
+
+    .hero-point {
+      padding: 1rem;
+      border-radius: var(--radius-sm);
+      background: rgba(255, 255, 255, 0.58);
+      border: 1px solid rgba(20, 33, 61, 0.08);
+    }
+
+    .hero-point strong {
+      display: block;
+      font-size: 0.95rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .hero-point span {
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+
+    .hero-card {
+      border-radius: var(--radius-lg);
+      padding: 1.4rem;
+      display: grid;
+      gap: 1rem;
+    }
+
+    .hero-card-main {
+      border-radius: 24px;
+      padding: 1.5rem;
+      min-height: 23rem;
+      color: white;
+      background:
+        linear-gradient(160deg, rgba(20, 33, 61, 0.98), rgba(24, 58, 92, 0.94)),
+        linear-gradient(135deg, var(--brand), var(--accent));
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card-main::before,
+    .hero-card-main::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .hero-card-main::before {
+      width: 12rem;
+      height: 12rem;
+      top: -3rem;
+      right: -2rem;
+    }
+
+    .hero-card-main::after {
+      width: 7rem;
+      height: 7rem;
+      bottom: -1rem;
+      left: -1rem;
+    }
+
+    .status-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.48rem 0.78rem;
+      border-radius: 999px;
+      font-size: 0.86rem;
+      font-weight: 700;
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .status-chip::before {
+      content: "";
+      width: 0.6rem;
+      height: 0.6rem;
+      border-radius: 50%;
+      background: #89f0b8;
+      box-shadow: 0 0 0 0.28rem rgba(137, 240, 184, 0.18);
+    }
+
+    .hero-card-main h2 {
+      margin-top: 1rem;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      line-height: 1.05;
+      max-width: 10ch;
+    }
+
+    .hero-card-main p {
+      margin: 0.9rem 0 0;
+      max-width: 28ch;
+      color: rgba(255, 255, 255, 0.82);
+      line-height: 1.7;
+    }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .mini-card {
+      padding: 1.1rem;
+      border-radius: 18px;
+      background: var(--surface-strong);
+      border: 1px solid rgba(20, 33, 61, 0.08);
+    }
+
+    .mini-card strong {
+      display: block;
+      margin-bottom: 0.4rem;
+      font-size: 1rem;
+    }
+
+    .mini-card span {
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 0.94rem;
+    }
+
+    section {
+      padding: 1.35rem 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 1.25rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .section-head p {
+      margin: 0.5rem 0 0;
+      max-width: 58ch;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .section-kicker {
+      display: block;
+      margin-bottom: 0.7rem;
+      color: var(--brand-deep);
+      font-size: 0.86rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .section-head h2 {
+      font-size: clamp(2rem, 4.2vw, 3.2rem);
+    }
+
+    .service-grid,
+    .support-grid,
+    .process-grid,
+    .faq-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .service-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .service-card,
+    .support-card,
+    .process-card,
+    .faq-card,
+    .contact-card {
+      border-radius: var(--radius-md);
+      padding: 1.4rem;
+    }
+
+    .icon-badge {
+      width: 2.7rem;
+      height: 2.7rem;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      margin-bottom: 1rem;
+      font-size: 1.25rem;
+      background: linear-gradient(135deg, rgba(255, 107, 53, 0.18), rgba(15, 118, 110, 0.16));
+    }
+
+    .service-card h3,
+    .support-card h3,
+    .process-card h3,
+    .faq-card h3,
+    .contact-card h3 {
+      font-size: 1.15rem;
+      line-height: 1.15;
+      margin-bottom: 0.75rem;
+    }
+
+    .service-card p,
+    .support-card p,
+    .process-card p,
+    .faq-card p,
+    .contact-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 0.97rem;
+    }
+
+    .support-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .support-card.featured {
+      background:
+        linear-gradient(160deg, rgba(255, 107, 53, 0.95), rgba(217, 79, 31, 0.95));
+      color: white;
+    }
+
+    .support-card.featured p,
+    .support-card.featured .tagline {
+      color: rgba(255, 255, 255, 0.88);
+    }
+
+    .tagline {
+      display: inline-block;
+      margin-bottom: 0.8rem;
+      color: var(--brand-deep);
+      font-size: 0.82rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 1rem;
+    }
+
+    .section-card {
+      border-radius: var(--radius-lg);
+      padding: 1.8rem;
+    }
+
+    .trust-list,
+    .process-list,
+    .contact-list {
+      display: grid;
+      gap: 0.8rem;
+      margin-top: 1.3rem;
+    }
+
+    .trust-item,
+    .process-item,
+    .contact-item {
+      display: flex;
+      gap: 0.9rem;
+      align-items: flex-start;
+    }
+
+    .trust-item strong,
+    .process-item strong,
+    .contact-item strong {
+      display: block;
+      margin-bottom: 0.18rem;
+      font-size: 0.98rem;
+    }
+
+    .trust-item span,
+    .process-item span,
+    .contact-item span {
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    .dot {
+      width: 0.9rem;
+      height: 0.9rem;
+      margin-top: 0.35rem;
+      flex: 0 0 auto;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--brand), var(--accent));
+      box-shadow: 0 0 0 0.4rem rgba(255, 107, 53, 0.12);
+    }
+
+    .process-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .process-step {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.2rem;
+      height: 2.2rem;
+      margin-bottom: 0.9rem;
+      border-radius: 999px;
+      font-weight: 800;
+      color: white;
+      background: linear-gradient(135deg, var(--accent), #0b9489);
+    }
+
+    .faq-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .contact-card.primary {
+      background:
+        linear-gradient(160deg, rgba(20, 33, 61, 0.98), rgba(18, 47, 79, 0.94));
+      color: white;
+    }
+
+    .contact-card.primary p,
+    .contact-card.primary .contact-item span {
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    .contact-email {
+      display: inline-flex;
+      align-items: center;
+      margin-top: 1.2rem;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(1.1rem, 3vw, 1.5rem);
+      font-weight: 700;
+      word-break: break-word;
+    }
+
+    footer {
+      padding: 1.4rem 0 3.2rem;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    @media (max-width: 1080px) {
+      .hero-grid,
+      .split,
+      .contact-wrap,
+      .service-grid,
+      .support-grid,
+      .process-grid,
+      .faq-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero-grid,
+      .split,
+      .contact-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .service-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 760px) {
+      .topbar-inner,
+      .section-head {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav {
+        flex-wrap: wrap;
+      }
+
+      .hero {
+        padding-top: 2.6rem;
+      }
+
+      .hero-copy,
+      .hero-card,
+      .section-card,
+      .service-card,
+      .support-card,
+      .process-card,
+      .faq-card,
+      .contact-card {
+        padding: 1.25rem;
+      }
+
+      .hero-points,
+      .mini-grid,
+      .service-grid,
+      .support-grid,
+      .process-grid,
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        max-width: 12ch;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
-
-<body id="page-top">
-
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
-    <a class="navbar-brand js-scroll-trigger" href="#page-top">
-      <span class="d-block d-lg-none">Mohammad Kumail</span>
-      <span class="d-none d-lg-block">
-        <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/profile.jpg" alt="">
-      </span>
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#about">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#experience">Experience</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#education">Education</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#skills">Skills</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#interests">Interests</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#awards">Awards</a>
-        </li>
-      </ul>
+<body>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <a class="brand" href="#top">
+        <span class="brand-mark">KK</span>
+        <span>KK IT Support</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#services">Services</a>
+        <a href="#support">Support Options</a>
+        <a href="#why-us">Why Choose Us</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
-  </nav>
+  </header>
 
-  <div class="container-fluid p-0">
+  <main id="top">
+    <section class="hero">
+      <div class="shell hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Melbourne based IT help</span>
+          <h1>Practical IT support that keeps life and business moving.</h1>
+          <p>
+            KK IT Support helps home users, families, and small businesses sort out the frustrating
+            tech problems that waste time and slow everything down. From Wi-Fi dropouts and printer
+            issues to laptop setups, malware cleanup, remote help, and website support, the goal is
+            simple: clear advice, sensible fixes, and less stress.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="mailto:m.kumail24@gmail.com?subject=IT%20Support%20Enquiry">
+              Email for support
+            </a>
+            <a class="button button-secondary" href="#services">Explore services</a>
+          </div>
+          <div class="hero-points">
+            <div class="hero-point">
+              <strong>Home support</strong>
+              <span>Fixes for everyday tech problems without the jargon.</span>
+            </div>
+            <div class="hero-point">
+              <strong>Small business help</strong>
+              <span>Reliable setup and troubleshooting for growing teams.</span>
+            </div>
+            <div class="hero-point">
+              <strong>Remote friendly</strong>
+              <span>Fast help for issues that can be solved online.</span>
+            </div>
+          </div>
+        </div>
 
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="about">
-      <div class="w-100">
-        <h1 class="mb-0">Mohammad Kumail
+        <aside class="hero-card" aria-label="Key offerings">
+          <div class="hero-card-main">
+            <span class="status-chip">Serving Melbourne and remote clients</span>
+            <h2>Support for the jobs people usually put off too long.</h2>
+            <p>
+              Device setup, home office problems, email issues, slow computers, broken Wi-Fi, and
+              the annoying tech tasks that stop people from getting on with their day.
+            </p>
+          </div>
+          <div class="mini-grid">
+            <div class="mini-card">
+              <strong>For homes</strong>
+              <span>Wi-Fi tuning, new laptop setup, backups, updates, and safer devices.</span>
+            </div>
+            <div class="mini-card">
+              <strong>For business</strong>
+              <span>Email setup, printer issues, user support, website help, and basic IT guidance.</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
 
-        </h1>
-        <br />
-        <p class="lead mb-5">I am a software engineer having more than 5 years of experience as a Backend Developer.</p>
-        <div class="social-icons">
-          <a href="https://www.linkedin.com/in/mohammadkumail/">
-            <i class="fab fa-linkedin-in"></i>
-          </a>
-          <a href="https://github.com/Kumail">
-            <i class="fab fa-github"></i>
-          </a>
+    <section id="services">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">Services</span>
+            <h2>What KK IT Support can help with</h2>
+            <p>
+              The service mix is designed to attract both homeowners and small businesses looking
+              for trustworthy, practical help without needing a full in-house IT team.
+            </p>
+          </div>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card">
+            <div class="icon-badge">Wi</div>
+            <h3>Wi-Fi and network setup</h3>
+            <p>Improve weak coverage, help connect devices, and sort out router, modem, and home office network issues.</p>
+          </article>
+          <article class="service-card">
+            <div class="icon-badge">PC</div>
+            <h3>Laptop and computer setup</h3>
+            <p>Set up new Windows laptops and desktops, transfer basics, install software, and get devices ready to use.</p>
+          </article>
+          <article class="service-card">
+            <div class="icon-badge">@</div>
+            <h3>Email and account issues</h3>
+            <p>Help with Outlook, Gmail, account access, device syncing, signatures, and general email troubleshooting.</p>
+          </article>
+          <article class="service-card">
+            <div class="icon-badge">PR</div>
+            <h3>Printer and scanner problems</h3>
+            <p>Reconnect printers, fix setup issues, sort scanning problems, and get shared devices working again.</p>
+          </article>
+          <article class="service-card">
+            <div class="icon-badge">SH</div>
+            <h3>Slow computer tune-ups</h3>
+            <p>Track down common performance problems, tidy up software issues, and help machines feel usable again.</p>
+          </article>
+          <article class="service-card">
+            <div class="icon-badge">VS</div>
+            <h3>Virus and malware cleanup</h3>
+            <p>Support with suspicious pop-ups, unsafe software, and steps to improve device security and hygiene.</p>
+          </article>
+          <article class="service-card">
+            <div class="icon-badge">RM</div>
+            <h3>Remote support sessions</h3>
+            <p>Handle many common issues online so clients can get help quickly without always needing an onsite visit.</p>
+          </article>
+          <article class="service-card">
+            <div class="icon-badge">WB</div>
+            <h3>Website help</h3>
+            <p>Basic website updates, troubleshooting, simple improvements, and technical guidance for small business sites.</p>
+          </article>
+          <article class="service-card">
+            <div class="icon-badge">CL</div>
+            <h3>Cloud and backup basics</h3>
+            <p>Help set up Google Drive, OneDrive, or simple backup routines so important files are easier to protect.</p>
+          </article>
+          <article class="service-card">
+            <div class="icon-badge">OF</div>
+            <h3>Home office setup</h3>
+            <p>Support with monitors, webcams, microphones, docking stations, and practical remote work setups.</p>
+          </article>
+          <article class="service-card">
+            <div class="icon-badge">SB</div>
+            <h3>Small business IT support</h3>
+            <p>Ongoing help for day-to-day tech issues, staff onboarding basics, and general troubleshooting for lean teams.</p>
+          </article>
+          <article class="service-card">
+            <div class="icon-badge">AD</div>
+            <h3>General IT guidance</h3>
+            <p>Advice for buying the right device, improving setup decisions, and avoiding expensive tech mistakes.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <hr class="m-0">
-
-    <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="experience">
-      <div class="w-100">
-        <h2 class="mb-5">Experience</h2>
-
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="resume-content">
-            <h3 class="mb-0">Contour Software</h3>
-            <div class="subheading mb-3">Senior Software Developer</div>
-            <p></p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">Mar 2023 - Present</span>
-          </div>
-        </div>
-        
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="resume-content">
-            <h3 class="mb-0">FAIR Consulting Group</h3>
-            <div class="subheading mb-3">Consultant</div>
-            <p></p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">Dec 2021 - Mar 2023</span>
+    <section id="support">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">Support options</span>
+            <h2>Built for both everyday users and growing businesses</h2>
+            <p>
+              Different clients need different kinds of support. This structure makes it easy for
+              visitors to quickly see where they fit.
+            </p>
           </div>
         </div>
 
-
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="resume-content">
-            <h3 class="mb-0">Avanza Solutions</h3>
-            <div class="subheading mb-3">Senior Software Engineer</div>
-            <p></p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">Sep 2020 - Dec 2021</span>
-          </div>
+        <div class="support-grid">
+          <article class="support-card featured">
+            <span class="tagline">Popular for home users</span>
+            <h3>Home tech support</h3>
+            <p>
+              Help with internet issues, laptop setup, printer headaches, device cleanup, smart home
+              basics, and general troubleshooting for families and individuals.
+            </p>
+          </article>
+          <article class="support-card">
+            <span class="tagline">Ideal for local teams</span>
+            <h3>Small business support</h3>
+            <p>
+              Practical help for day-to-day operations including staff device setup, shared account
+              issues, office Wi-Fi, email problems, and basic website assistance.
+            </p>
+          </article>
+          <article class="support-card">
+            <span class="tagline">Fast and flexible</span>
+            <h3>Remote support</h3>
+            <p>
+              A good fit for software issues, guidance, troubleshooting, setup walkthroughs, and many
+              problems that do not require a physical visit.
+            </p>
+          </article>
         </div>
-
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="resume-content">
-            <h3 class="mb-0">Systems Limited</h3>
-            <div class="subheading mb-3">Software Engineer</div>
-            <p></p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">Jun 2018 - Sep 2020</span>
-          </div>
-        </div>
-
-      </div>
-
-    </section>
-
-    <hr class="m-0">
-
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="education">
-      <div class="w-100">
-        <h2 class="mb-5">Education</h2>
-
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="resume-content">
-            <h3 class="mb-0">NED University of Engineering and Technology</h3>
-            <div class="subheading mb-3">MS (Information Security)</div>
-            <p>CGPA: 3.6 out of 4.0</p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">2020 - 2022</span>
-          </div>
-        </div>
-
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="resume-content">
-            <h3 class="mb-0">FAST - National University of Computer and Emerging Sciences</h3>
-            <div class="subheading mb-3">BS (Computer Science)</div>
-            <p>CGPA: 3.1 out of 4.0</p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">2014 - 2018</span>
-          </div>
-        </div>
-
       </div>
     </section>
 
-    <hr class="m-0">
+    <section id="why-us">
+      <div class="shell split">
+        <div class="section-card">
+          <span class="section-kicker">Why choose us</span>
+          <h2>Technical depth with a support-first approach</h2>
+          <p style="margin: 1rem 0 0; color: var(--muted); line-height: 1.75;">
+            As a software engineer based in Melbourne, you bring more technical range than a typical
+            break-fix operator. That means clients can get help with straightforward device issues,
+            but also benefit from someone who understands systems, troubleshooting, and how technology
+            should support the way people actually work.
+          </p>
+          <div class="trust-list">
+            <div class="trust-item">
+              <span class="dot"></span>
+              <div>
+                <strong>Clear communication</strong>
+                <span>Problems explained in plain language, with practical next steps instead of confusing jargon.</span>
+              </div>
+            </div>
+            <div class="trust-item">
+              <span class="dot"></span>
+              <div>
+                <strong>Broad technical coverage</strong>
+                <span>Support that can span devices, connectivity, software issues, and light web-related work.</span>
+              </div>
+            </div>
+            <div class="trust-item">
+              <span class="dot"></span>
+              <div>
+                <strong>Designed for trust</strong>
+                <span>A calm, helpful experience matters, especially for clients who feel overwhelmed by tech.</span>
+              </div>
+            </div>
+          </div>
+        </div>
 
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="skills">
-      <div class="w-100">
-        <h2 class="mb-5">Skills</h2>
-
-        <ul class="fa-ul mb-0">
-          <li>
-            <i class="fa-li fa fa-check"></i>
-            Java
-          </li>
-          <li>
-            <i class="fa-li fa fa-check"></i>
-            Spring Boot
-          </li>
-          <li>
-            <i class="fa-li fa fa-check"></i>
-            TypeScript
-          </li>
-          <li>
-            <i class="fa-li fa fa-check"></i>
-            Node.js
-          </li>
-          <li>
-            <i class="fa-li fa fa-check"></i>
-            C#
-          </li>
-          <li>
-            <i class="fa-li fa fa-check"></i>
-            .NET
-          </li>
-        </ul>
+        <div class="section-card">
+          <span class="section-kicker">How it works</span>
+          <h2>Simple support, start to finish</h2>
+          <div class="process-list">
+            <div class="process-item">
+              <span class="dot"></span>
+              <div>
+                <strong>1. You describe the issue</strong>
+                <span>Clients send an email with the problem, device type, and whether support is for home or business use.</span>
+              </div>
+            </div>
+            <div class="process-item">
+              <span class="dot"></span>
+              <div>
+                <strong>2. The right support path is chosen</strong>
+                <span>Some jobs are best handled remotely, while others may need a more hands-on plan.</span>
+              </div>
+            </div>
+            <div class="process-item">
+              <span class="dot"></span>
+              <div>
+                <strong>3. The issue gets resolved or stabilised</strong>
+                <span>The focus is on practical outcomes, clear advice, and reducing repeat problems where possible.</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <hr class="m-0">
+    <section>
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">Process</span>
+            <h2>The kind of problems people usually reach out about first</h2>
+            <p>
+              These are common entry points for new clients and can help the site convert visitors who
+              are not sure whether their issue is worth asking about.
+            </p>
+          </div>
+        </div>
 
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="interests">
-      <div class="w-100">
-        <h2 class="mb-5">Interests</h2>
-        <ul class="fa-ul mb-0">
-          <li>
-            <i class="fa-li fa fa-check"></i>
-            Reading
-          </li>
-          <li>
-            <i class="fa-li fa fa-check"></i>
-            Travelling
-          </li>
-          <li>
-            <i class="fa-li fa fa-check"></i>
-            Working out
-          </li>
-        </ul>
+        <div class="process-grid">
+          <article class="process-card">
+            <span class="process-step">1</span>
+            <h3>"My Wi-Fi is unreliable"</h3>
+            <p>Support with internet dropouts, dead zones, unstable connections, and basic home or office network setup.</p>
+          </article>
+          <article class="process-card">
+            <span class="process-step">2</span>
+            <h3>"My laptop is slow"</h3>
+            <p>Help investigating common causes, cleaning up the setup, and making the machine more usable day to day.</p>
+          </article>
+          <article class="process-card">
+            <span class="process-step">3</span>
+            <h3>"My printer or email stopped working"</h3>
+            <p>Support for the everyday issues that block people from getting work done and often take too long to fix alone.</p>
+          </article>
+        </div>
       </div>
     </section>
 
-    <hr class="m-0">
+    <section>
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">FAQ</span>
+            <h2>Good questions to answer before someone reaches out</h2>
+          </div>
+        </div>
 
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="awards">
-      <div class="w-100">
-        <h2 class="mb-5">Awards &amp; Certifications</h2>
-        <ul class="fa-ul mb-0">
-          <li>
-            <i class="fa-li fa fa-trophy text-warning"></i>
-            Back End Development and APIs (freeCodeCamp.org)
-          </li>
-          <li>
-            <i class="fa-li fa fa-trophy text-warning"></i>
-            JavaScript Algorithms and Data Structures (freeCodeCamp.org)
-          </li>
-        </ul>
+        <div class="faq-grid">
+          <article class="faq-card">
+            <h3>Do you help home users and businesses?</h3>
+            <p>Yes. KK IT Support is positioned for both households and small businesses that need dependable, practical tech help.</p>
+          </article>
+          <article class="faq-card">
+            <h3>Can support be provided remotely?</h3>
+            <p>Yes. Many software, setup, account, and troubleshooting issues can be handled effectively through remote support.</p>
+          </article>
+          <article class="faq-card">
+            <h3>What should I include in my email?</h3>
+            <p>It helps to mention the issue, the device involved, your location, and whether the support is for home or business use.</p>
+          </article>
+        </div>
       </div>
     </section>
 
-  </div>
+    <section id="contact">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">Contact</span>
+            <h2>Ready to start with email enquiries</h2>
+            <p>
+              This version is set up to keep things simple while the business gets moving. Once you are
+              ready, we can easily add phone, a contact form, pricing sections, testimonials, or suburb-specific pages.
+            </p>
+          </div>
+        </div>
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <div class="contact-wrap">
+          <article class="contact-card primary">
+            <h3>Get in touch with KK IT Support</h3>
+            <p>
+              Send a short message with the issue you need help with, and mention whether it is home
+              tech support, small business support, remote support, or website help.
+            </p>
+            <a class="contact-email" href="mailto:m.kumail24@gmail.com?subject=IT%20Support%20Enquiry">
+              m.kumail24@gmail.com
+            </a>
+          </article>
 
-  <!-- Plugin JavaScript -->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+          <article class="contact-card">
+            <h3>Best details to include</h3>
+            <div class="contact-list">
+              <div class="contact-item">
+                <span class="dot"></span>
+                <div>
+                  <strong>The issue</strong>
+                  <span>What is going wrong and when it started.</span>
+                </div>
+              </div>
+              <div class="contact-item">
+                <span class="dot"></span>
+                <div>
+                  <strong>Your setup</strong>
+                  <span>Device type, software, internet or printer details if relevant.</span>
+                </div>
+              </div>
+              <div class="contact-item">
+                <span class="dot"></span>
+                <div>
+                  <strong>Support type</strong>
+                  <span>Home, small business, remote support, or website help.</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
 
-  <!-- Custom scripts for this template -->
-  <script src="js/resume.min.js"></script>
-
+  <footer>
+    <div class="shell">
+      KK IT Support | Melbourne, Australia | Email enquiries welcome
+    </div>
+  </footer>
 </body>
-
 </html>
